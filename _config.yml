@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  SamireddiNikhila
 
 # Build settings
 # theme: jekyll-theme-hacker
@@ -46,6 +46,9 @@ collections:
   writeups:
     output: true
     permalink: /writeups/:title/
+baseurl: "/myblog"
+url: "https://samireddinikhila.github.io"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
