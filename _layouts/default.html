@@ -1,43 +1,45 @@
-default.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }} - {{ page.title }}</title>
-    <link rel="stylesheet" href="{{ "/custom.css" | relative_url }}">
+    <!-- Use site.baseurl for CSS path -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/custom.css">
 </head>
 <body>
     <header id="header">
         <div class="cipher">
             @Nyra
         </div>
+
         <nav class="nav-links">
-            <a href="{{ "/" | relative_url }}"
-               {% if page.url == "/" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/"
+               {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>
                Home
             </a>
-        
-            <a href="{{ "/blog/" | relative_url }}"
+
+            <a href="{{ site.baseurl }}/blog/"
                {% if page.url == "/blog/" %}class="active"{% endif %}>
                Blog
             </a>
-        
-            <a href="{{ "/writeups/" | relative_url }}"
+
+            <a href="{{ site.baseurl }}/writeups/"
                {% if page.url == "/writeups/" %}class="active"{% endif %}>
                Writeups
             </a>
         </nav>
-        
     </header>
-    
+
     <main class="home-container">
         {{ content }}
     </main>
-    
-    <!-- <footer>
+
+    <!-- Optional footer -->
+    <!--
+    <footer>
         <p>&copy; 2024 {{ site.title }}. All rights reserved.</p>
-    </footer> -->
+    </footer>
+    -->
 </body>
 </html>
