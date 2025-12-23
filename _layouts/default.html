@@ -14,11 +14,22 @@ default.html
             @Nyra
         </div>
         <nav class="nav-links">
-            <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-            <!-- <a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a> -->
-            <a href="/blog/" {% if page.url == "/blog/" %}class="active"{% endif %}>Blog</a>
-            <a href="/writeups/" {% if page.url == "/writeups/" %}class="active"{% endif %}>Writeups</a>
+            <a href="{{ "/" | relative_url }}"
+               {% if page.url == "/" %}class="active"{% endif %}>
+               Home
+            </a>
+        
+            <a href="{{ "/blog/" | relative_url }}"
+               {% if page.url == "/blog/" %}class="active"{% endif %}>
+               Blog
+            </a>
+        
+            <a href="{{ "/writeups/" | relative_url }}"
+               {% if page.url == "/writeups/" %}class="active"{% endif %}>
+               Writeups
+            </a>
         </nav>
+        
     </header>
     
     <main class="home-container">
