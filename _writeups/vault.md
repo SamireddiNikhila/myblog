@@ -24,7 +24,7 @@ The level is solved by reading the password directly from the Vault contract’s
 
 ---
 
-**Exploiy Script (Foundry):**
+**Exploit Script (Foundry):**
 
 <pre class="plain-code"><code>
 // SPDX-License-Identifier: MIT
