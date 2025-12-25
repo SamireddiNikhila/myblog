@@ -62,6 +62,7 @@ contract AttackReentrance {
         msg.sender.transfer(address(this).balance);
     }
 }
+
 </code></pre>
 
 ---

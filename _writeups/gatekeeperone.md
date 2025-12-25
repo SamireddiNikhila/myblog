@@ -52,6 +52,7 @@ contract AttackGateOne{
         }
     }
 }
+
 </code></pre>
 
 ---
