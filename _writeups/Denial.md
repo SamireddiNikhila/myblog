@@ -3,7 +3,7 @@ layout: writeup
 title: "Denial"
 level: "Beginner"
 category: "Ethernaut"
-description: "Understand how call and transfer works.This level demonstrates a denial‑of‑service vulnerability caused by unsafe use of call with unbounded gas forwarding.
+description: "Understand how call and transfer works.This level demonstrates a denial‑of‑service vulnerability caused by unsafe use of call with unbounded gas forwarding."
 ---
 
 ## Analysis
