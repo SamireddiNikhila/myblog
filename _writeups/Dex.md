@@ -37,6 +37,7 @@ cast send $DEX "swap(address,address,uint256)" $TOKEN1 $TOKEN2 <AMOUNT> --rpc-ur
 # 3.**Swap 2(Token2 -> Token1)**
 cast send $DEX "swap(address,address,uint256)" $TOKEN2 $TOKEN1 <AMOUNT> --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
 // Perform sequence of swaps in order to drain atleast oneof the two Tokens
+
 #4.**Verify the Balance**
 cast call $DEX "balanceOf(address,address)" $TOKEN1 $DEX --rpc-url $SEPOLIA_RPC_URL  
 cast call $DEX "balanceOf(address,address)" $TOKEN2 $DEX --rpc-url $SEPOLIA_RPC_URL
