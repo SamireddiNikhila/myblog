@@ -5,7 +5,7 @@ description: >-
   Security writeups and smart contract research.
 
 baseurl: "/myblog"
-url: "https://samireddinikhila.github.io"
+url: "https://samireddinikhila.github.io/myblog/"
 
 
 plugins:
