@@ -1,19 +1,18 @@
 ---
 layout: writeup
-title: "Dex"
+title: "DexTwo"
 level: "Intermediate"
 category: "Ethernaut"
 description: "One will succeed in this level if they manage to drain each of  the two tokens out of the contract, and allow the contract to report a `bad` price of the assets."
 ---
 
 ## Analysis
-The Dex contract is a basic exchange that allows users to swap token1 for token2 and vice versa. The price is determined by the ratio of the tokens currently held by the contract
+The vulnerability in Dex Two is that the swap function no longer checks if the from and to token addresses are the official token1 or token2.
 
 **The Flaw:**
-The vulnerability lies in the get_swap_price function: ((amount * target_Token_Balance) / source_Token_Balance)
+In the original Dex, there was a requirement that the tokens being swapped must be the ones the contract was designed for. In Dex Two, that check is missing. This means you can create a fake malicious token, mint a large amount to yourself, and "swap" your worthless fake tokens for the contract's real token1 and token2.
 
 ## Solution
-
 To solve this, you need to perform a series of swaps. Since the price calculation is flawed, each swap increases your relative purchasing power.
 
 **Step-by-Step:**
