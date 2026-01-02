@@ -3,7 +3,7 @@ layout: writeup
 title: "Dex"
 level: "Intermediate"
 category: "Ethernaut"
-description: "One will succeed in this level if they manage to drain each of at least one of the two tokens out of the contract, and allow the contract to report a "bad" price of the assets."
+description: "One will succeed in this level if they manage to drain each of at least one of the two tokens out of the contract, and allow the contract to report a `bad` price of the assets."
 ---
 
 ## Analysis

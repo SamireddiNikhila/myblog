@@ -3,7 +3,7 @@ layout: writeup
 title: "Shop"
 level: "Intermediate"
 category: "Ethernaut"
-description: "The shop sells an item for 100.Mission is to "scam" the shop into selling it to you for almost nothing
+description: "The shop sells an item for 100.Mission is to `scam` the shop into selling it to you for almost nothing
 "
 ---
 
