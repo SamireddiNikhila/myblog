@@ -11,7 +11,7 @@ like Ethernaut.
 - Web3 learning notes
 
 ## Live Site
-https://<your-username>.github.io/myblog/
+https://samireddinikhila.github.io/myblog/
 
 ## Tech Stack
 - Jekyll
