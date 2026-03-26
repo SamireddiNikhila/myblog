@@ -112,5 +112,17 @@ summary::-webkit-details-marker {
   margin-bottom: 20px;
 }
 
-
+.writeup-content .highlight {
+    background-color: #0d0d0d !important;
+    white-space: pre !important;           /* CRITICAL FIX */
+    display: block !important;
+    padding: 15px !important;
+    overflow-x: auto !important;
+    color: #00FF00 !important;
+    border: 1px solid #333 !important;
+}
+/* Removes those annoying grey boxes inside the black box */
+.writeup-content .highlight span {
+    background: transparent !important;
+}
 </style>

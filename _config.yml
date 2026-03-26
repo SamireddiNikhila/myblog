@@ -5,8 +5,7 @@ description: >-
   Security writeups and smart contract research.
 
 baseurl: "/myblog"
-url: "https://samireddinikhila.github.io/myblog/"
-
+url: "http://localhost:4001"
 
 plugins:
   - jekyll-feed
