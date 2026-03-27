@@ -19,5 +19,5 @@ I identified a function `init()` that was not protected by a constructor or an "
 
 ### Execution:
 ```bash
-cast send $CONTRACT "init()" --private-key $PRIV --rpc-url $RPC
+cast send $CONTRACT "init()" --private-key $PRIVATE_KEY --rpc-url $SEPOLIA_RPC_URL
 cast send $CONTRACT "claimFlag()" --private-key $PRIVATE_KEY --rpc-url $SEPOLIA_RPC_URL
