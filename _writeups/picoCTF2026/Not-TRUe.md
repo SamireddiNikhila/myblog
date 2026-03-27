@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "picoCTF 2026: not TRUe"
+title: "picoCTF 2026: Not TRUe"
 level: "Hard"
 description: "Breaking the NTRU lattice-based cryptosystem using the LLL lattice reduction algorithm."
 category: "picoCTF-Crypto"
