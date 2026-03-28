@@ -5,13 +5,13 @@ description: >-
   Security writeups and smart contract research.
 
 baseurl: "/myblog"
-url: "http://localhost:4000"
+url: "https://samireddinikhila.github.io"  # ← change from localhost
 
 plugins:
   - jekyll-feed
 
 markdown: kramdown
-highlighter: none
+highlighter: rouge  
 
 sass:
   style: compressed
