@@ -1,11 +1,14 @@
-post.html
-
 ---
 layout: default
 ---
 
 <article>
+  <header>
     <h1>{{ page.title }}</h1>
-    <p>{{ page.date | date: "%B %d, %Y" }}</p>
+    <p style="color: gray; font-size: 14px;">{{ page.date | date: "%B %d, %Y" }}</p>
+  </header>
+
+  <section>
     {{ content }}
+  </section>
 </article>
