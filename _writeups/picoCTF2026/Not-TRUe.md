@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 The scouts have upgraded to post-quantum encryption. They claim it's 'TRUe' security, but we suspect their implementation might be flawed.
 
 ## Analysis
+
+first time i ran LLL reduction on an actual NTRU lattice. watching the private key fall out of the matrix was genuinely wild.
+
 This challenge implements the **NTRU** cryptosystem. NTRU's security is based on the hard problem of finding the shortest vector in a high-dimensional lattice. However, if the dimension $N$ is small or the coefficients are poorly chosen, we can use **Lattice Reduction** techniques like the **LLL Algorithm** to recover the private key.
 
 ## Solution

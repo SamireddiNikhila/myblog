@@ -8,6 +8,8 @@ description: "providing the Ethernaut with a Solver(code size is 10 bytes at mos
 
 ## Analysis
 
+10 bytes of raw EVM bytecode. no solidity. closest i've felt to talking directly to the machine.
+
 The `MagicNum` contract requires you to provide a solver contract that responds to `whatIsTheMeaningOfLife()` and returns the number **42**, encoded as a 32-byte value.
 
 

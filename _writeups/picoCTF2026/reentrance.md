@@ -10,6 +10,9 @@ category: "picoCTF-BC"
 The classic Ethernaut-style reentrancy. Drain the contract of all its funds to get the flag.
 
 ## Analysis
+
+picoCTF version of the classic. effects before interactions — never forget the order.
+
 The contract follows the "Checks-Interactions-Effects" pattern incorrectly. It sends Ether to the user *before* updating their balance. This allows a malicious contract to call the `withdraw` function repeatedly before the first call finishes.
 
 

@@ -7,6 +7,7 @@ description: "Exploit the dangerous delegatecall function to hijack ownership of
 ---
 
 ## Analysis
+delegatecall is the most dangerous opcode in solidity. this level is why.
 
 The `Delegation` contract acts as a proxy that forwards calls to a `Delegate` contract using `delegatecall`. 
 

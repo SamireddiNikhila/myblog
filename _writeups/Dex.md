@@ -7,6 +7,9 @@ description: "One will succeed in this level if they manage to drain each of at 
 ---
 
 ## Analysis
+
+the price formula looks fine until you realize you can swing it to infinity with enough swaps.
+
 The Dex contract is a basic exchange that allows users to swap token1 for token2 and vice versa. The price is determined by the ratio of the tokens currently held by the contract
 
 **The Flaw:**

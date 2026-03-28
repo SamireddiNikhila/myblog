@@ -8,6 +8,8 @@ description: "Manipulate an elevator's logic by implementing a malicious Buildin
 
 ## Analysis
 
+the contract trusted an external interface to tell the truth. it didn't. lesson learned.
+
 The `Elevator` contract relies on an interface called `Building`. It calls a function `isLastFloor(uint)` to decide whether to set the `top` variable to `true`.
 
 **The Flaw:**

@@ -8,16 +8,28 @@ description: "Exploit pseudo-randomness in Solidity by predicting the outcome of
 
 ## Analysis
 
-The `CoinFlip` contract relies on the block hash of the previous block to generate a "random" number. In blockchain, this is **deterministic**—meaning if you can calculate the value in the same block, you can predict the result with 100% accuracy.
+the moment I understood that block.number is public to everyone — 
+randomness in solidity made zero sense to me anymore. 
+
+
+The `CoinFlip` contract relies on the block hash of the previous block 
+to generate a "random" number. In blockchain, this is **deterministic** — 
+meaning if you can calculate the value in the same block, you can predict 
+the result with 100% accuracy.
 
 **The Flaw:**  
-The contract uses `uint256(blockhash(block.number - 1))` as the source of randomness. Since an attacker contract can call the target contract in the same block, both will see the exact same `block.number - 1` and therefore the same "random" result.
+The contract uses `uint256(blockhash(block.number - 1))` as the source of 
+randomness. Since an attacker contract can call the target contract in the 
+same block, both will see the exact same `block.number - 1` and therefore 
+the same "random" result.
 
 ---
 
 ## Solution
 
-To solve this, you must deploy your own "Attacker" contract that performs the exact same math as the victim contract and then calls the `flip()` function with the "correct" guess.
+Deploy your own attacker contract that performs the exact same math as the 
+victim contract and calls `flip()` with the predicted guess. Run it 10 times 
+across 10 separate blocks to hit the required consecutive win streak.
 
 ---
 
@@ -50,5 +62,3 @@ contract CoinFlipAttacker {
     }
 }
 </code></pre>
-
----

@@ -8,6 +8,8 @@ description: "You need to hijack the wallet to become the admin of the proxy."
 
 ## Analysis
 
+three bugs chained together — storage collision, broken access, and msg.value reuse. this one genuinely took me a while to untangle.
+
 It consists of two contracts: 
    ->Puzzle Proxy(proxy) 
    ->Puzzle Wallet(implementation)

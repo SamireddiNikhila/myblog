@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 The message is just a sequence of numbers. Can you translate them back into the flag?
 
 ## Analysis
+
+A=1, B=2. oldest trick in the book. still satisfying to decode.
+
 This is a basic **Substitution Cipher**. Each number corresponds to a letter of the alphabet based on its index (A=1, B=2, ..., Z=26). The structure of the numbers clearly mimics the `picoCTF{...}` format, with the numbers for 'P', 'I', 'C', and 'O' appearing at the start.
 
 ## Solution

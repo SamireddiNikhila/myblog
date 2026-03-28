@@ -8,6 +8,8 @@ description: "Force-feed Ether to a contract that has no payable functions using
 
 ## Analysis
 
+you can't defend against selfdestruct. that realization sat with me for a while.
+
 The `Force` contract is completely empty. It has no functions, no fallback, and no receive mechanism. Normally, if you try to send Ether to this contract, the transaction will fail.
 
 **The Flaw:**

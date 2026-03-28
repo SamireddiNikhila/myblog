@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 The system generates a 'unique' secret for every session, but it seems to rely on the current time to do so. If you can sync your clock with the server, the secret might not be so secret.
 
 ## Analysis
+
+time.time() as an RNG seed. ±5 second brute force window was enough. clocks are not secrets.
+
 The core vulnerability here is **Predictable Seeding**. Most Pseudo-Random Number Generators (PRNGs) are deterministic; if you know the `seed`, you can predict every subsequent number. By using `time.time()` as a seed, the "randomness" becomes a function of the clock.
 
 

@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 The transmission is encrypted using a simple hardware-based stream cipher. We managed to recover the feedback taps and the first few bytes of the output. Can you find the initial state?
 
 ## Analysis
+
+LFSR felt intimidating at first. once you model it as matrix multiplication over GF(2) it clicks fast.
+
 This challenge uses an **LFSR (Linear Feedback Shift Register)**. Since the feedback mechanism is linear (using XOR), we can model the state transitions as a matrix multiplication over $GF(2)$. If we have the tap positions, we can simulate the register in reverse or solve for the initial seed.
 
 

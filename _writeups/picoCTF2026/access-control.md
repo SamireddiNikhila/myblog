@@ -10,6 +10,9 @@ category: "picoCTF-BC"
 The contract has a `claimFlag()` function that only the "owner" should be able to call. Can you become the owner?
 
 ## Analysis
+
+unprotected init() function. the kind of bug that shows up in real audits more than people admit.
+
 The contract uses a simple `address public owner` variable. However, the initialization function or a "renounceOwnership" function is poorly implemented, allowing any user to overwrite the owner variable.
 
 

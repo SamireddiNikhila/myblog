@@ -8,6 +8,8 @@ description: "Unlock a vault by reading 'private' storage data directly from the
 
 ## Analysis
 
+'private' in solidity means nothing on a public blockchain. everything is readable. everything.
+
 The `Vault` contract is locked and requires a `password` to open. The password is stored as a `private` variable:
 `bytes32 private password;`
 

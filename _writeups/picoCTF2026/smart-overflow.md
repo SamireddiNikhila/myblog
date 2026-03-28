@@ -10,6 +10,9 @@ category: "picoCTF-BC"
 This challenge features a simple token contract where users can buy and sell tokens. The goal is to obtain a balance much higher than the total supply.
 
 ## Analysis
+
+pre-0.8.0 underflow. safemath exists for a reason.
+
 The vulnerability exists in the `transfer` function where it checks the user's balance but fails to account for **Integer Overflow**. In older Solidity versions (pre-0.8.0), adding to a variable at its maximum value ($2^{256} - 1$) would cause it to wrap back around to 0.
 
 

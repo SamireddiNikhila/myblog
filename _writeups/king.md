@@ -8,6 +8,8 @@ description: "Claim the throne and remain King forever by creating a contract th
 
 ## Analysis
 
+elegant. one contract that just refuses to accept ether — and the whole game breaks. love this one.
+
 The `King` contract works like a game: to become the new king, you must send more Ether than the current "prize." When someone does this, the contract sends the previous prize back to the old king:
 `payable(king).transfer(msg.value);`
 

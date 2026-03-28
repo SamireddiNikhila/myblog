@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 Two interstellar scouts are communicating using a shared secret. We've intercepted their public keys and the prime parameters. Can you recover the secret key they are using to encrypt their map?
 
 ## Analysis
+
+clean Diffie-Hellman implementation. the math is elegant when you see it working end-to-end.
+
 This is a standard implementation of the **Diffie-Hellman (DH)** protocol. The security of DH relies on the difficulty of the **Discrete Logarithm Problem**. However, in this challenge, the prime $p$ was small enough (or the private key was weak enough) to allow for the recovery of the shared secret.
 
 

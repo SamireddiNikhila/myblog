@@ -7,6 +7,7 @@ description: "Identify a critical typo in a contract's constructor that allows a
 ---
 
 ## Analysis
+a single character typo. that's all it takes. stared at this for longer than i'd like to admit.  
 
 In older versions of Solidity (pre-0.4.22), constructors were defined by creating a function with the **exact same name** as the contract.
 

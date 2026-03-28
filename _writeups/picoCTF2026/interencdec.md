@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 We found a strange transmission that seems to be double-encoded. Can you peel back the layers to find the flag?
 
 ## Analysis
+
+layer one was obvious. layer two caught me off guard. always peel one more layer.
+
 This challenge requires identifying common encoding schemes. The initial string features a character set consistent with **Base64**. After the first decoding step, the resulting text appears to be shifted using a **Caesar Cipher (ROT13)**.
 
 

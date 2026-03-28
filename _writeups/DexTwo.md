@@ -7,6 +7,9 @@ description: "One will succeed in this level if they manage to drain each of  th
 ---
 
 ## Analysis
+
+removing one require check opens the door to fake token injection. one line of missing validation. 
+
 The vulnerability in Dex Two is that the swap function no longer checks if the from and to token addresses are the official token1 or token2.
 
 **The Flaw:**

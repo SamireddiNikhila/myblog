@@ -8,6 +8,9 @@ description: "The shop sells an item for 100.Mission is to `scam` the shop into 
 ---
 
 ## Analysis
+
+two calls to the same view function, assuming the answer stays the same. it didn't.
+
 The main issue is that the `Shop` contract performs two external calls to an untrusted contract `Buyer` to get the same information.
 
 

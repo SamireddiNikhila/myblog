@@ -8,6 +8,8 @@ description: "Pass three complex security gates involving tx.origin, precise gas
 
 ## Analysis
 
+gate 2 broke me. brute-forcing the gas offset felt dirty but it worked.
+
 * **Gate 1:** Requires `msg.sender != tx.origin`. This is bypassed by using an attacker contract.
 * **Gate 2:** Requires `gasleft() % 8191 == 0`. This is the hardest part; you must provide a precise amount of gas so that when the execution reaches this line, the remaining gas is a multiple of 8191.
 * **Gate 3:** Requires specific bitwise equalities between a `bytes8` key and `tx.origin`.

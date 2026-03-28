@@ -9,6 +9,8 @@ description: "  Complete this level by recovering (or removing) the 0.001 ether 
 
 ## Analysis
 
+deterministic contract addresses saved the day. the EVM never forgets.
+
 Contracts created with "new" have deterministic addresses.So even if the token contract address is “lost”, it can be recomputed on-chain from deployer address and Nonce.
 
 **The Flaw:**  

@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 You are trapped in a digital maze. Every door is locked with a bitwise challenge. Find the path to the exit to recover the interstellar map coordinates.
 
 ## Analysis
+
+BFS + XOR conditions — two things i didn't expect to see in the same challenge.
+
 The 'maze' is represented as a graph where each node is a 16-byte hex string. To move between connected nodes, the transition must satisfy a specific XOR condition. This is a classic **Breadth-First Search (BFS)** problem combined with cryptographic checks. 
 
 

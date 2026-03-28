@@ -8,6 +8,8 @@ description: "Exploit an integer underflow to bypass balance checks and generate
 
 ## Analysis
 
+underflow is beautiful in the worst way. 20 - 21 = the entire uint256 range. still unsettling.
+
 The vulnerability lies in the `transfer` function:
 `require(balances[msg.sender] - _value >= 0);`
 

@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 We found a leaked hash from an interstellar database. Can you find the original password to unlock the next sector?
 
 ## Analysis
+
+rockyou.txt does a lot of heavy lifting in CTFs. dictionary attacks are underrated.
+
 Cryptographic hashes are one-way, meaning they cannot be reversed through a simple formula. To find the plaintext, we must perform a **Dictionary Attack**. By hashing every word in a known list and comparing it to our target, we can identify the original password if it exists in our dictionary.
 
 

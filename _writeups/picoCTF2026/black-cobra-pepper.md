@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 We've intercepted a hashed password from the 'Black Cobra' squad. They use a secret 'pepper' to spice up their security. Can you find the original password?
 
 ## Analysis
+
+a one-character pepper sounds strong until you realize the search space is just 62 characters.
+
 A **Pepper** is a secret constant added to a password before hashing. Unlike a salt, it is not stored in the database. However, if the pepper is short (e.g., a single alphanumeric character), it only adds a small amount of entropy. We can defeat this by appending every possible pepper character to every word in our dictionary.
 
 ## Solution

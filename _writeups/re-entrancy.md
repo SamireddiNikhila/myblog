@@ -8,6 +8,8 @@ description: "Drain a contract's entire balance by recursively calling the withd
 
 ## Analysis
 
+the DAO hack in miniature. once you see the execution order, you can't unsee it.
+
 The vulnerability exists in the `withdraw` function because it follows an insecure pattern: it sends Ether to the user **before** updating their balance in the contract's state.
 
 **The Flaw:**

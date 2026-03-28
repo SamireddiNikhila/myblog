@@ -8,6 +8,8 @@ description: "Hijack contract ownership by exploiting storage slot collisions du
 
 ## Analysis
 
+two-phase delegatecall storage collision — this is the most satisfying exploit on the list.
+
 The `Preservation` contract uses a library to set the time. It uses `delegatecall` to execute `setTime(uint256)` in the `LibraryContract`.
 
 **The Flaw:**

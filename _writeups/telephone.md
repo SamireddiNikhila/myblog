@@ -8,6 +8,8 @@ description: "Exploit the difference between tx.origin and msg.sender to bypass 
 
 ## Analysis
 
+tx.origin vs msg.sender broke my mental model completely the first time. this level fixed it.
+
 The vulnerability in the `Telephone` contract lies in this line:
 `if (tx.origin != msg.sender) { owner = _owner; }`
 

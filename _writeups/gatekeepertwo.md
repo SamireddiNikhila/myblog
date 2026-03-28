@@ -8,6 +8,8 @@ description: "Bypass assembly-level code size checks and solve a bitwise XOR equ
 
 ## Analysis
 
+extcodesize == 0 during constructor — the kind of trick that makes you appreciate how weird the EVM really is.
+
 * **Gate 1:** Standard `msg.sender != tx.origin` (use a contract).
 * **Gate 2:** Uses assembly `extcodesize(caller())` and requires it to be `0`. 
     > **The Trick:** During a contract's `constructor`, its `extcodesize` is still 0. The attack must happen entirely within the constructor.

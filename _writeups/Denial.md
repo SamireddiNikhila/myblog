@@ -7,6 +7,9 @@ description: "Understand how call and transfer works.This level demonstrates a d
 ---
 
 ## Analysis
+
+infinite gas loops as a weapon. simple and brutal.
+
 call forwards all remaining gas to the receiver, enabling arbitrary code execution and potential gas-based denial-of-service attacks, while transfer sends Ether with a fixed 2300 gas stipend and reverts on failure, making it safer but sometimes incompatible with contracts that need more gas.
 
 **The Flaw:**

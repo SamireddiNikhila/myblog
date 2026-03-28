@@ -8,6 +8,8 @@ description: "Bypass a 10-year lock-up period by utilizing the ERC20 transferFro
 
 ## Analysis
 
+locked the transfer function. forgot transferFrom exists. happens in real protocols too.
+
 The `NaughtCoin` contract implements an ERC20 token where the `transfer` function is overridden with a modifier called `lockTokens`. This modifier prevents you from transferring tokens for 10 years.
 
 **The Flaw:**

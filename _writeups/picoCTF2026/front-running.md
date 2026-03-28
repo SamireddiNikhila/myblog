@@ -10,6 +10,9 @@ category: "picoCTF-BC"
 A secret password releases the flag. But even if you find the password, someone keeps beating you to the claim!
 
 ## Analysis
+
+mempool visibility is a feature and a vulnerability at the same time. had to outbid the bot with priority fees.
+
 On a public blockchain, all pending transactions are visible in the **Mempool**. If you send a transaction with the correct password, a bot can see your transaction, copy the password, and send a transaction with a higher **Gas Fee** to get processed first.
 
 

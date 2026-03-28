@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 The Interstellar communication hub uses a massive cluster of RSA keys to secure its traffic. However, we suspect their entropy source is flawed. Can you find a way into the system?
 
 ## Analysis
+
+batch GCD on a cluster of weak keys — the moment gcd(n1, n2) returned something other than 1, i knew it was over for them.
+
 The security of RSA depends on the difficulty of factoring $n = p \times q$. However, if two different public keys $n_1$ and $n_2$ share a prime factor (e.g., $p$), that prime can be found easily using the Euclidean Algorithm: $p = \gcd(n_1, n_2)$. 
 
 Once $p$ is recovered, we can find $q = n / p$, calculate the private exponent $d$, and decrypt the message.

@@ -10,6 +10,9 @@ category: "picoCTF-Crypto"
 An image was intercepted from the "Interstellar" fleet. Rumor has it the encryption keys are hidden within the image itself.
 
 ## Analysis
+
+RSA key hidden in image LSBs. zsteg pulled it out in seconds. two-stage exploit was fun.
+
 This challenge is a two-part exploit:
 1. **LSB Steganography:** Data is hidden in the Least Significant Bits of the image pixels.
 2. **RSA Decryption:** The hidden data contains the parameters ($p, q, e$) or a PEM-encoded private key needed to decrypt the flag.

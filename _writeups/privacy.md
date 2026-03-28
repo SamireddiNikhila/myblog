@@ -8,6 +8,8 @@ description: "Unlock a heavily shielded contract by navigating complex storage s
 
 ## Analysis
 
+mapping storage slots manually was painful. but now storage layout is burned into my brain.
+
 Like the Vault challenge, the goal is to find a `bytes32` key. However, this contract has many variables, meaning the key is buried deeper in the storage slots.
 
 **The Storage Layout Rules:**
