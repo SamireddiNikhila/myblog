@@ -22,14 +22,17 @@ that itch didn't go away. so i stopped ignoring it.
 
 ## where it started
 
-i jumped straight into solidity. no roadmap, no courses — 
+i jumped straight into solidity. no roadmap — 
 just the docs, failed transactions, and a growing list 
 of things i didn't understand yet.
 
-when i found Ethernaut, everything clicked in the worst 
-possible way. i realized how many assumptions i'd been making. 
-how many of them were wrong. that "it works" and "it's secure" 
-are two completely different sentences.
+a friend suggested Ethernaut. 
+that recommendation changed everything.
+
+suddenly every assumption i'd made about 
+"safe code" was wrong. i realized that 
+"it works" and "it's secure" are two 
+completely different sentences.
 
 ---
 
@@ -42,11 +45,6 @@ are two completely different sentences.
 - participating in audit contests and bug bounty 
   programs as **Nyra**
 
-every challenge taught me something no tutorial could. 
-GateKeeper One broke me for longer than i'd like to admit. 
-PuzzleWallet made me untangle three chained bugs before 
-i could even see the exploit path.
-
 security isn't learned by reading about it. 
 you learn it by failing at it — repeatedly — 
 until the pattern burns itself into your brain.
@@ -57,9 +55,14 @@ until the pattern burns itself into your brain.
 
 because i wish it existed when i started.
 
-every writeup here is a real vulnerability pattern. 
-every solution is something i actually ran, broke, 
-fixed, and ran again.
+here you'll find:
+- **CTF + Ethernaut writeups** — real exploits, real POCs
+- **deep concept breakdowns** — delegatecall, reentrancy, 
+  storage slots, and everything that breaks your mental model
+- **protocol analysis** — security lens on real DeFi protocols
+- **tool guides** — Foundry, Cast, audit workflows
+- **audit + bug bounty journey** — what i'm learning in the field
+- **expanded X threads** — the ones worth going deeper on
 
 if you're somewhere at the beginning of this path — 
 confused, stuck, wondering if you're doing it right — 
