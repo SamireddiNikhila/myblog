@@ -1,8 +1,8 @@
 # My Blog
 
 This repository contains my personal blog where I publish
-write-ups on blockchain security, smart contracts, and CTF challenges
-like Ethernaut.
+write-ups on blockchain security, smart contracts,  CTF challenges
+and Ethernaut challenes.
 
 ## Topics
 - Ethereum & Solidity
